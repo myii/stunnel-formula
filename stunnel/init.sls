@@ -65,6 +65,11 @@ stunnel_package:
       - service: stunnel_service
     - context:
         name: {{ name }}
+  cmd.run:
+    - name: |
+        cat {{ stunnel.conf_dir }}/services.d/{{ name }}.conf
+    - require:
+      - file: {{ stunnel.conf_dir }}/services.d/{{ name }}.conf
 {% endfor -%}
 
 {{ stunnel.log_dir }}:

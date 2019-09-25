@@ -87,3 +87,5 @@ stunnel:
         client: 'no'
         accept: '12003'
         connect: '127.0.0.1:2003'
+        verifyChain: 'yes'
+        verifyPeer: 'yes'
